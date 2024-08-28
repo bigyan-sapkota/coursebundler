@@ -27,6 +27,7 @@ export default function Header() {
 
   const logoutHandler = () => {
     console.log("logout");
+    onClose();
   };
 
   return (
@@ -64,11 +65,19 @@ export default function Header() {
 
           <DrawerBody>
             <VStack spacing="4" alignItems="flex-start">
-              <LinkButton url="/" title="Home" />
-              <LinkButton url="/courses" title="Browse All Courses" />
-              <LinkButton url="/request" title="Request a Course" />
-              <LinkButton url="/contact" title="Contact Us" />
-              <LinkButton url="/about" title="About" />
+              <LinkButton onClose={onClose} url="/" title="Home" />
+              <LinkButton
+                onClose={onClose}
+                url="/courses"
+                title="Browse All Courses"
+              />
+              <LinkButton
+                onClose={onClose}
+                url="/request"
+                title="Request a Course"
+              />
+              <LinkButton onClose={onClose} url="/contact" title="Contact Us" />
+              <LinkButton onClose={onClose} url="/about" title="About" />
 
               <HStack
                 justifyContent="space-evenly"
@@ -80,7 +89,7 @@ export default function Header() {
                   <>
                     <VStack>
                       <HStack>
-                        <Link to="/profile">
+                        <Link to="/profile" onClick={onClose}>
                           <Button variant="ghost" colorScheme="yellow">
                             Profile
                           </Button>
@@ -92,7 +101,7 @@ export default function Header() {
                       </HStack>
 
                       {user && user.role === "admin" && (
-                        <Link to="/admin/dashboard">
+                        <Link to="/admin/dashboard" onClick={onClose}>
                           <Button colorScheme="purple" variant="ghost">
                             <RiDashboardFill style={{ margin: "4px" }} />
                             Dashboard
@@ -103,13 +112,13 @@ export default function Header() {
                   </>
                 ) : (
                   <>
-                    <Link to="/login">
+                    <Link onClick={onClose} to="/login">
                       <Button colorScheme="yellow">Login</Button>
                     </Link>
 
                     <p>OR</p>
 
-                    <Link to="/register">
+                    <Link onClick={onClose} to="/register">
                       <Button colorScheme="yellow">SignUp</Button>
                     </Link>
                   </>
@@ -123,9 +132,9 @@ export default function Header() {
   );
 }
 
-const LinkButton = ({ url = "/", title = "Home" }) => {
+const LinkButton = ({ url = "/", title = "Home", onClose }) => {
   return (
-    <Link to={url}>
+    <Link to={url} onClick={onClose}>
       <Button variant="ghost">{title}</Button>
     </Link>
   );
