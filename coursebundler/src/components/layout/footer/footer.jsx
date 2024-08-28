@@ -1,9 +1,7 @@
 import { Box, Heading, HStack, Stack, VStack } from "@chakra-ui/react";
-import {
-  TiSocialYoutubeCircular,
-  TiSocialInstagramCircular,
-} from "react-icons/ti";
+import { AiFillTwitterCircle } from "react-icons/ai";
 import { DiGithub } from "react-icons/di";
+import { TiSocialInstagramCircular } from "react-icons/ti";
 
 export default function Footer() {
   return (
@@ -22,13 +20,13 @@ export default function Footer() {
           color="white"
           fontSize="50"
         >
-          <a href="#" target="_blank">
-            <TiSocialYoutubeCircular />
+          <a href="https://x.com/bigyan_spkt" target="blank">
+            <AiFillTwitterCircle />
           </a>
-          <a href="https://www.instagram.com/bigyansapkota/" target="_blank">
+          <a href="https://www.instagram.com/bigyansapkota/" target="blank">
             <TiSocialInstagramCircular />
           </a>
-          <a href="https://github.com/bigyan-sapkota" target="_blank">
+          <a href="https://github.com/bigyan-sapkota" target="blank">
             <DiGithub />
           </a>
         </HStack>
