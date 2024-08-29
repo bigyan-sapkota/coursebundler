@@ -5,21 +5,20 @@ import {
   FormLabel,
   Heading,
   Input,
-  Textarea,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Contact() {
+export default function Request() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [course, setCourse] = useState("");
 
   return (
     <Container h="92vh">
       <VStack h="full" justifyContent="center" spacing="16">
-        <Heading>Contact Us</Heading>
+        <Heading>Request New Course</Heading>
 
         <form action="" style={{ width: "100%" }}>
           <Box my="4">
@@ -49,12 +48,12 @@ export default function Contact() {
           </Box>
 
           <Box my="4">
-            <FormLabel htmlFor="message">Message</FormLabel>
-            <Textarea
+            <FormLabel htmlFor="course">Message</FormLabel>
+            <Input
               required
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              id="course"
+              value={course}
+              onChange={(e) => setCourse(e.target.value)}
               placeholder="Your Message"
               focusBorderColor="yellow.500"
             />
@@ -73,7 +72,7 @@ export default function Contact() {
           </Button>
 
           <Box my="4">
-            Request for a course?{" "}
+            See Available Courses.{" "}
             <Link to="/request">
               <Button colorScheme="yellow" variant="link">
                 Click
