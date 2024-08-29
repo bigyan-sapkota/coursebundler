@@ -8,6 +8,7 @@ import Home from "./components/home/home";
 import Footer from "./components/layout/footer/footer";
 import Header from "./components/layout/header/header";
 import Request from "./components/request/request";
+import About from "./components/about/about";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
       </Routes>
