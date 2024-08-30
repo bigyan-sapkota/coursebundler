@@ -20,7 +20,7 @@ export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const user = {
     role: "admin",
   };
@@ -41,6 +41,7 @@ export default function Header() {
         position="fixed"
         top="4"
         right="4"
+        zIndex="overlay"
       >
         {colorMode === "light" ? <MdDarkMode /> : <MdLightMode />}
       </IconButton>
@@ -54,7 +55,7 @@ export default function Header() {
         position="fixed"
         top="6"
         left="6"
-        zIndex="10"
+        zIndex="overlay"
       >
         <RiMenu5Fill />
       </Button>
