@@ -9,16 +9,19 @@ import Header from "./components/layout/header/header";
 import Home from "./components/home/home";
 import Contact from "./components/contact/contact";
 import Courses from "./components/courses/courses";
+import CoursePage from "./components/course-page/course-page";
 import Request from "./components/request/request";
 import About from "./components/about/about";
 import Footer from "./components/layout/footer/footer";
 
 import Subscribe from "./components/payments/subscribe";
-import NotFound from "./components/not-fount/not-found";
+import NotFound from "./components/not-found/not-found";
 import PaymentSuccess from "./components/payments/payment-success";
 import PaymentFail from "./components/payments/payment-fail";
 
 export default function App() {
+  window.addEventListener("contextmenu", (e) => e.preventDefault());
+
   return (
     <Router>
       <Header />
@@ -27,6 +30,7 @@ export default function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/course/:id" element={<CoursePage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
         <Route path="/about" element={<About />} />

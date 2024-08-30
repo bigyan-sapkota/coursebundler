@@ -54,6 +54,7 @@ export default function Header() {
         position="fixed"
         top="6"
         left="6"
+        zIndex="10"
       >
         <RiMenu5Fill />
       </Button>
