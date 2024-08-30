@@ -1,6 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ForgetPassword from "./components/auth/forget-password";
 import ResetPassword from "./components/auth/reset-password";
+import ChangePassword from "./components/profile/change-password";
+import UpdateProfile from "./components/profile/update-profile";
 
 import Register from "./components/auth/register";
 import Login from "./components/auth/login";
@@ -39,6 +41,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
 
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/paymentsuccess" element={<PaymentSuccess />} />

@@ -101,7 +101,7 @@ export default function Profile() {
             <Link to="/updateprofile">
               <Button>Update Profile</Button>
             </Link>
-            <Link to="/chagepassword">
+            <Link to="/changepassword">
               <Button>Change Password</Button>
             </Link>
           </Stack>
